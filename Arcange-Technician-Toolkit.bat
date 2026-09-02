@@ -1,6 +1,6 @@
 @echo off
 setlocal EnableExtensions
-title Arcange Windows Technician Toolkit v0.1
+title Arcange Windows Technician Toolkit v0.2
 color 0F
 set "ENGINE=%~dp0src\Arcange-Technician.ps1"
 if not exist "%ENGINE%" (
