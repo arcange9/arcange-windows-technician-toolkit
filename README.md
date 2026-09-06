@@ -1,25 +1,24 @@
 # 🛠️ Arcange Windows Technician Toolkit
 
-**Version 0.2** • **Windows 10 & Windows 11** • **Created by Mukamyi Izere Arcange**
+**Version 0.3** • **Windows 10 & Windows 11** • **Created by Mukamyi Izere Arcange**
 
-A friendly, practical Windows technician toolkit for checking, diagnosing, maintaining, and troubleshooting PCs. It uses a simple Batch launcher with a PowerShell diagnostic engine so technicians, students, IT support teams, and everyday users can work through common Windows problems in a structured way.
+A friendly, practical Windows technician toolkit for checking, diagnosing, maintaining, troubleshooting, and safely repairing PCs. It uses a simple Batch launcher with a PowerShell diagnostic engine so technicians, students, IT support teams, and everyday users can work through common Windows problems in a structured way.
 
 > **Supported operating systems: Windows 10 and Windows 11 only.**
 
-## ✨ What's new in v0.2
+## ✨ What's new in v0.3
 
-- Safer confirmation prompts before repair actions
-- Administrator-status detection
-- Improved hardware diagnostics
-- USB device diagnostics
-- Driver diagnostics and driver-package inventory
-- Battery information and automatic battery HTML reports
-- Microsoft Defender and Windows Firewall status
-- HTTPS connectivity testing
-- Selected automatic-service health checks
-- Improved full diagnostic reports
-- More detailed technician session logging
-- Updated branding and user-friendly exit screen
+- Windows Update diagnostics and service checks
+- Guided network troubleshooting wizard with a basic health score
+- Advanced storage diagnostics and reliability counters where supported
+- Low-free-space detection
+- Windows Error Analyzer with common-event explanations and recommendations
+- Technician Case IDs for each session
+- TXT, JSON, and HTML diagnostic report export
+- Health summary in full reports
+- Windows Update service restart and cache-reset repair options
+- Expanded technician workflow: **Scan → Analyze → Explain → Recommend → Confirm → Repair → Verify → Report**
+- Continued confirmation prompts and administrator checks for impactful repairs
 
 ## 🔎 Core capabilities
 
@@ -29,13 +28,18 @@ A friendly, practical Windows technician toolkit for checking, diagnosing, maint
 - 🎮 GPU/display information
 - 🔌 USB device diagnostics
 - 🌐 Network, gateway, internet, DNS and HTTPS diagnostics
+- 🧭 Guided network troubleshooting wizard
 - 💾 Storage, volumes and read-only CHKDSK checks
+- 📊 Advanced storage health/reliability information where supported
 - 🪟 SFC, DISM and recent Windows error diagnostics
+- 🔄 Windows Update service and history diagnostics
 - 🚗 Driver and driver-package inspection
 - 🔋 Battery diagnostics and battery reports
 - 🛡️ Firewall and Microsoft Defender status
+- 🔍 Windows Error Analyzer
 - 🔧 Controlled Windows/network repair actions
-- 📋 Full technician diagnostic reports
+- 📋 TXT, JSON and HTML technician reports
+- 🆔 Session Case IDs
 - 📝 Session and action logging
 - 📁 Local report storage
 - 🙂 Simple menu designed for both beginners and technicians
@@ -46,8 +50,9 @@ A friendly, practical Windows technician toolkit for checking, diagnosing, maint
 2. Open the project folder.
 3. Run **`Arcange-Technician-Toolkit.bat`**.
 4. Choose a diagnostic option.
-5. Review the results.
-6. Generate a full report when needed.
+5. Review the results and recommendations.
+6. Use Repair Center only when appropriate and authorized.
+7. Generate a full report when needed.
 
 Administrator permission is recommended for repair operations. Only perform repairs when you have appropriate authorization.
 
@@ -67,9 +72,19 @@ arcange-windows-technician-toolkit/
 
 ## 🧑‍🔧 Technician workflow
 
-**Identify → Collect information → Diagnose → Recommend → Confirm → Repair → Verify → Report**
+**Scan → Analyze → Explain → Recommend → Confirm → Repair → Verify → Report**
 
-The toolkit is designed to encourage diagnosis before repair and to keep a record of important actions performed during a technician session.
+Each session receives a Case ID such as `AWT-20260906-120000`. The toolkit records important actions in the session log and can generate TXT, JSON, and HTML reports for later review.
+
+## 📊 Reporting
+
+Version 0.3 can generate three local report formats:
+
+- **TXT** — easy to read and share
+- **JSON** — useful for future automation and integrations
+- **HTML** — readable technician report with a health summary
+
+Reports are saved in the local `reports/` folder and are not uploaded automatically.
 
 ## 🔐 Safety & limitations
 
@@ -77,7 +92,9 @@ This project is intended for legitimate PC maintenance, troubleshooting, educati
 
 The toolkit performs software-level checks, but software cannot reliably detect every physical hardware fault. Problems involving a damaged motherboard, power supply, cable, connector, or certain intermittent hardware failures may require physical inspection and dedicated diagnostic equipment.
 
-Repair options can change Windows or network configuration. The toolkit therefore uses confirmation prompts for important repair actions.
+Repair options can change Windows or network configuration. The toolkit therefore uses confirmation prompts for important repair actions and checks administrator status.
+
+The Windows Update cache reset renames the existing `SoftwareDistribution` folder rather than deleting it directly, but it should still only be performed when appropriate and with authorization.
 
 The toolkit does not automatically modify boot configuration or perform destructive disk operations.
 
@@ -91,26 +108,23 @@ This release supports:
 - **Windows 11**
 - Windows PowerShell 5.1 or later
 
-Individual features may depend on the Windows edition/build, permissions, hardware, drivers, and available Windows components.
+Individual features may depend on the Windows edition/build, permissions, hardware, drivers, and available Windows components. Advanced storage reliability counters are only shown when the system exposes them.
 
 ## 📈 Roadmap
 
-### v0.2 — Current release
+### v0.3 — Current release
 
-Core diagnostics, safer repairs, driver/battery/security checks, improved reporting and technician logging.
+Professional diagnostics, Windows Update checks, guided network troubleshooting, advanced storage checks, error analysis, Case IDs, and TXT/JSON/HTML reporting.
 
 ### Future releases
 
-- Automated problem classification
+- More automated problem classification
 - More detailed driver analysis
-- Windows Update diagnostics
-- Advanced storage reliability information where supported
-- More network troubleshooting tests
-- Technician/customer case IDs
-- HTML/JSON/PDF report export
-- Better error and exit-code handling
+- Better error-code and exit-code handling
 - Hardware temperature information where reliably available
 - Optional graphical interface
+- Optional PDF export
+- Automated test suite and GitHub Actions validation
 - Authorized remote-support capabilities
 
 ## 📜 License
