@@ -1,8 +1,8 @@
-#requires -version 5.1
+﻿#requires -version 5.1
 [CmdletBinding()]
 param()
 $ErrorActionPreference='SilentlyContinue'
-$Version='0.4'
+$Version='0.5'
 $Name='Arcange Windows Technician Toolkit'
 $Author='Mukamyi Izere Arcange'
 $Root=Split-Path -Parent (Split-Path -Parent $PSCommandPath)
@@ -74,16 +74,16 @@ function Add-Button($text,$tip,$handler){
   $b.Add_Click($handler);$actions.Controls.Add($b)
 }
 Add-Button '🔎 Quick Scan' 'System + hardware snapshot' { $s=Get-SystemSnapshot; $info.Text="PC: $($s.Manufacturer) $($s.Model)`nOS: $($s.OS) (Build $($s.Build))`nCPU: $($s.CPU)`nRAM: $($s.RAMGB) GB   |   Problem devices: $($s.ProblemDevices)   |   Low-space volumes: $($s.LowSpace)   |   Admin: $($s.Admin)" }
-Add-Button '🖥 System Info' 'Open detailed system diagnostics' { Run-Engine }
-Add-Button '⚙ Hardware' 'CPU, RAM, GPU, USB and PnP' { Run-Engine }
-Add-Button '🌐 Network Wizard' 'Guided connectivity diagnostics' { Run-Engine }
-Add-Button '💾 Storage' 'Disk and volume health' { Run-Engine }
-Add-Button '🔄 Windows Update' 'Update services and history' { Run-Engine }
-Add-Button '🚗 Drivers' 'Driver and PnP diagnostics' { Run-Engine }
-Add-Button '🛡 Security' 'Firewall and Defender status' { Run-Engine }
-Add-Button '🧩 Error Analyzer' 'Analyze recent Windows errors' { Run-Engine }
-Add-Button '📋 Generate Reports' 'TXT, JSON and HTML reports' { Run-Engine }
-Add-Button '🔧 Repair Center' 'Open controlled repair actions' { Run-Engine }
+Add-Button '🖥 System Info' 'Open detailed system diagnostics' { Run-Engine SystemInfo }
+Add-Button '⚙ Hardware' 'CPU, RAM, GPU, USB and PnP' { Run-Engine Hardware }
+Add-Button '🌐 Network Wizard' 'Guided connectivity diagnostics' { Run-Engine NetworkWizard }
+Add-Button '💾 Storage' 'Disk and volume health' { Run-Engine Storage }
+Add-Button '🔄 Windows Update' 'Update services and history' { Run-Engine WindowsUpdate }
+Add-Button '🚗 Drivers' 'Driver and PnP diagnostics' { Run-Engine Drivers }
+Add-Button '🛡 Security' 'Firewall and Defender status' { Run-Engine Security }
+Add-Button '🧩 Error Analyzer' 'Analyze recent Windows errors' { Run-Engine ErrorAnalyzer }
+Add-Button '📋 Generate Reports' 'TXT, JSON and HTML reports' { Run-Engine Report }
+Add-Button '🔧 Repair Center' 'Open controlled repair actions' { Run-Engine Repair }
 Add-Button '📁 Reports Folder' 'Open local reports' { $dir=Join-Path $Root 'reports';New-Item -ItemType Directory -Force -Path $dir|Out-Null;Start-Process explorer.exe $dir }
 
 $footer=New-Object System.Windows.Forms.Label

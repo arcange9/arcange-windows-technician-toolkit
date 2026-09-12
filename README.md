@@ -1,12 +1,12 @@
 # 🛠️ Arcange Windows Technician Toolkit
 
-**Version 0.4** • **Windows 10 & Windows 11** • **Multi-vendor PC support** • **Created by Mukamyi Izere Arcange**
+**Version 0.5** • **Windows 10 & Windows 11** • **Multi-vendor PC support** • **Created by Mukamyi Izere Arcange**
 
 A friendly, practical Windows technician toolkit for checking, diagnosing, maintaining, troubleshooting, and safely repairing PCs. It uses a simple Batch launcher with a PowerShell diagnostic engine so technicians, students, IT support teams, and everyday users can work through common Windows problems in a structured way.
 
 > **Supported operating systems: Windows 10 and Windows 11.**
 
-## ✨ What's new in v0.3
+## ✨ What's new in v0.5
 
 - Windows Update diagnostics and service checks
 - Guided network troubleshooting wizard with a basic health score
@@ -26,19 +26,32 @@ A friendly, practical Windows technician toolkit for checking, diagnosing, maint
 
 The toolkit is designed to work across common Windows PC manufacturers instead of being locked to one brand.
 
-Examples include:
+Recognized vendors and product families include:
 
-- HP / EliteBook / ProBook / Pavilion
-- Dell / Latitude / Inspiron / Precision
-- Lenovo / ThinkPad / IdeaPad / Yoga
-- Acer / Aspire / TravelMate
-- ASUS / VivoBook / ZenBook / TUF
-- MSI
-- Microsoft Surface
-- Custom-built desktop PCs
+- HP / EliteBook / ProBook / ZBook / Spectre / Envy / Pavilion / Omen / Victus
+- Dell / Latitude / Inspiron / OptiPlex / Precision / XPS / Vostro / Alienware
+- Lenovo / ThinkPad / ThinkCentre / ThinkBook / IdeaPad / IdeaCentre / Yoga / Legion / LOQ
+- Acer Group (Acer, Gateway, eMachines, Packard Bell) / Aspire / Swift / Spin / TravelMate / Predator / Nitro
+- ASUS / VivoBook / ZenBook / ExpertBook / ProArt / ROG / TUF
+- MSI / Katana / Raider / Titan / Stealth / Prestige / Modern / Cyborg
+- Microsoft Surface / Surface Pro / Surface Laptop / Surface Go / Surface Book
+- Samsung / Galaxy Book
+- Toshiba / Dynabook / Satellite / Portege / Tecra
+- Fujitsu / LIFEBOOK / ESPRIMO / Stylistic / Celsius
+- Panasonic / Toughbook
+- Apple (Windows on Mac via Boot Camp) / MacBook / iMac / Mac mini
+- HUAWEI / MateBook
+- HONOR / MagicBook
+- Xiaomi / Redmi / Mi NoteBook / RedmiBook
+- LG / Gram / UltraPC
+- Razer / Blade
+- GIGABYTE / AERO / AORUS
+- VAIO / Sony / VAIO SX
+- Medion / Akoya / Erazer
+- ODM and custom-built PCs (Clevo, TongFang, Quanta, Compal, PCSpecialist, System76, and others)
 - Other Windows 10 and Windows 11 compatible PCs
 
-The toolkit automatically detects the **manufacturer, model, and platform type** through standard Windows system information. Diagnostics primarily use Windows/CIM/WMI, Plug and Play, networking, storage, security, and system-management interfaces rather than manufacturer-specific utilities.
+The toolkit automatically detects the **manufacturer, model, platform type, vendor brand, and product series** through standard Windows system information, and shows a **Vendor Support Profile** with the official support site and recommended vendor tools (menu option 16). Diagnostics primarily use Windows/CIM/WMI, Plug and Play, networking, storage, security, and system-management interfaces rather than manufacturer-specific utilities.
 
 This means the same toolkit can be used on an HP today and a Dell, Lenovo, Acer, ASUS, MSI, Surface, or custom PC tomorrow.
 
@@ -137,9 +150,9 @@ Individual features may depend on the Windows edition/build, permissions, hardwa
 
 ## 📈 Roadmap
 
-### v0.4 — Current release
+### v0.5 — Current release
 
-Professional offline GUI, 50+ technician actions, multi-vendor diagnostics, Windows Update checks, guided network troubleshooting, advanced storage checks, error analysis, Case IDs, automatic hardware vendor detection, and local reporting.
+Worldwide vendor support profiles (20+ brands, product series detection, support-site guidance), section shortcuts in the GUI, full multi-vendor diagnostics, offline GUI with 50+ technician actions, Windows Update checks, guided network troubleshooting, advanced storage checks, error analysis, Case IDs, and local TXT/JSON/HTML reporting.
 
 ### Future releases
 
@@ -149,7 +162,7 @@ Professional offline GUI, 50+ technician actions, multi-vendor diagnostics, Wind
 - Hardware temperature information where reliably available
 - Optional PDF export
 - Automated test suite and GitHub Actions validation
-- Optional vendor-aware modules for special hardware features
+- Deeper vendor-aware modules for special hardware features (BIOS/firmware tool integration)
 - Authorized remote-support capabilities
 
 ## 📜 License
