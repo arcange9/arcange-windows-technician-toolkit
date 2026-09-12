@@ -2,7 +2,7 @@
 [CmdletBinding()]
 param()
 $ErrorActionPreference='SilentlyContinue'
-$Version='0.3'
+$Version='0.4'
 $Author='Mukamyi Izere Arcange'
 $Name='Arcange Windows Technician Toolkit'
 $Root=Split-Path -Parent (Split-Path -Parent $PSCommandPath)
