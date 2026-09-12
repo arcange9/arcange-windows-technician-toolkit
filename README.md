@@ -1,6 +1,6 @@
 # 🛠️ Arcange Windows Technician Toolkit
 
-**Version 0.3** • **Windows 10 & Windows 11** • **Multi-vendor PC support** • **Created by Mukamyi Izere Arcange**
+**Version 0.4** • **Windows 10 & Windows 11** • **Multi-vendor PC support** • **Created by Mukamyi Izere Arcange**
 
 A friendly, practical Windows technician toolkit for checking, diagnosing, maintaining, troubleshooting, and safely repairing PCs. It uses a simple Batch launcher with a PowerShell diagnostic engine so technicians, students, IT support teams, and everyday users can work through common Windows problems in a structured way.
 
@@ -137,9 +137,9 @@ Individual features may depend on the Windows edition/build, permissions, hardwa
 
 ## 📈 Roadmap
 
-### v0.3 — Current release
+### v0.4 — Current release
 
-Professional multi-vendor diagnostics, Windows Update checks, guided network troubleshooting, advanced storage checks, error analysis, Case IDs, automatic hardware vendor detection, and TXT/JSON/HTML reporting.
+Professional offline GUI, 50+ technician actions, multi-vendor diagnostics, Windows Update checks, guided network troubleshooting, advanced storage checks, error analysis, Case IDs, automatic hardware vendor detection, and local reporting.
 
 ### Future releases
 
@@ -147,7 +147,6 @@ Professional multi-vendor diagnostics, Windows Update checks, guided network tro
 - More detailed driver analysis
 - Better error-code and exit-code handling
 - Hardware temperature information where reliably available
-- Optional graphical interface
 - Optional PDF export
 - Automated test suite and GitHub Actions validation
 - Optional vendor-aware modules for special hardware features
