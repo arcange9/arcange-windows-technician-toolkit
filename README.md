@@ -1,26 +1,29 @@
 # 🛠️ Arcange Windows Technician Toolkit
 
-**Version 0.5** • **Windows 10 & Windows 11** • **Multi-vendor PC support** • **Created by Mukamyi Izere Arcange**
+**Version 0.6** • **Windows 10 & Windows 11** • **Multi-vendor PC support** • **Created by Mukamyi Izere Arcange**
 
 A friendly, practical Windows technician toolkit for checking, diagnosing, maintaining, troubleshooting, and safely repairing PCs. It uses a simple Batch launcher with a PowerShell diagnostic engine so technicians, students, IT support teams, and everyday users can work through common Windows problems in a structured way.
 
 > **Supported operating systems: Windows 10 and Windows 11.**
 
-## ✨ What's new in v0.5
+## ✨ What's new in v0.6 — the 100-feature release
 
-- Windows Update diagnostics and service checks
-- Guided network troubleshooting wizard with a basic health score
-- Advanced storage diagnostics and reliability counters where supported
-- Low-free-space detection
-- Windows Error Analyzer with common-event explanations and recommendations
-- Technician Case IDs for each session
-- TXT, JSON, and HTML diagnostic report export
-- Health summary in full reports
-- Windows Update service restart and cache-reset repair options
-- Automatic PC manufacturer and model detection
-- Vendor-independent diagnostics using standard Windows APIs and tools
-- Expanded technician workflow: **Scan → Analyze → Explain → Recommend → Confirm → Repair → Verify → Report**
-- Continued confirmation prompts and administrator checks for impactful repairs
+v0.6 adds **100 new features** organized into six themed suites (menu 17–22), on top of everything from v0.5:
+
+**Hardware Test Suite (menu 17)** — CPU stress test with thermal watch, RAM test launcher, disk speed benchmark, SMART dump with plain-English meanings, battery wear analysis, dead-pixel test, keyboard tester, webcam and audio diagnostics, USB speed detection, thermal report, GPU check, display audit, touchscreen check, Bluetooth scan, BIOS/UEFI report, CPU temperature, motherboard report, power event analysis, printer diagnostics.
+
+**Network Pro Suite (menu 18)** — internet speed test, Wi-Fi channel congestion analysis, local network scanner, port scanner, DNS benchmark, packet loss test, public IP/ISP info, VPN detection, firewall audit, gateway identification, NIC driver check, MAC randomization check, DNS leak test, hosts file integrity, proxy audit, Ethernet vs Wi-Fi comparison, saved Wi-Fi history, Wi-Fi password recovery (admin), latency test, network backup + reset.
+
+**Windows Health Suite (menu 19)** — BSOD analyzer, boot time history, activation check, restore points, outdated driver finder, driver package cleaner, Windows Update stuck-fixer, services optimizer, system file change monitor, event log export, corrupt profile detector, disk error history, RAM-hungry process finder, reliability summary, pending reboot detector, Defender scan + quarantine review, uptime analysis, page file advisor, time sync check.
+
+**Cleanup and Speed Suite (menu 20)** — software inventory export, startup manager, scheduled tasks auditor, largest files finder, cleanup calculator, duplicate file detector, browser cache report, bloatware uninstaller, empty folder cleaner, temp cleaner, recycle bin audit, prefetch cleaner, WinSxS analyzer, hibernation advisor, before/after tune report.
+
+**Security Suite (menu 21)** — password age audit, admin exposure check, UAC verification, SMBv1/legacy protocol check, shared folder audit, BitLocker status, RDP exposure check, suspicious startup script detector, certificate anomaly check, and a 0–100 security baseline score.
+
+**Technician Workflow Suite (menu 22)** — client case database, before/after repair comparison, PDF export, email report to client, QR code for report summary, scheduled weekly health checks, remote-assist prep page, bootable USB guide, warranty checker by serial, repair price estimator (RWF), case notes, language settings (English/Français/Kinyarwanda menu beta), voice guidance, GUI theme preference, and a toolkit update checker.
+
+Some features need internet (speed test, public IP, QR, update check) or Administrator rights (Wi-Fi passwords, Defender scans, scheduled tasks); the toolkit degrades gracefully when they are unavailable.
+
 
 ## 🖥️ Multi-vendor compatibility
 
@@ -150,9 +153,9 @@ Individual features may depend on the Windows edition/build, permissions, hardwa
 
 ## 📈 Roadmap
 
-### v0.5 — Current release
+### v0.6 — Current release
 
-Worldwide vendor support profiles (20+ brands, product series detection, support-site guidance), section shortcuts in the GUI, full multi-vendor diagnostics, offline GUI with 50+ technician actions, Windows Update checks, guided network troubleshooting, advanced storage checks, error analysis, Case IDs, and local TXT/JSON/HTML reporting.
+The 100-feature release: six themed suites (Hardware Test, Network Pro, Windows Health, Cleanup and Speed, Security, Technician Workflow) on top of worldwide vendor support profiles, GUI section shortcuts, offline GUI, and local TXT/JSON/HTML reporting.
 
 ### Future releases
 

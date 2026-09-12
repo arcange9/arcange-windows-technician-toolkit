@@ -2,7 +2,7 @@
 [CmdletBinding()]
 param()
 $ErrorActionPreference='SilentlyContinue'
-$Version='0.5'
+$Version='0.6'
 $Name='Arcange Windows Technician Toolkit'
 $Author='Mukamyi Izere Arcange'
 $Root=Split-Path -Parent (Split-Path -Parent $PSCommandPath)
@@ -39,9 +39,9 @@ function Run-Engine([string]$Argument='') {
 
 $form=New-Object System.Windows.Forms.Form
 $form.Text="$Name v$Version"
-$form.Size=New-Object System.Drawing.Size(1050,680)
+$form.Size=New-Object System.Drawing.Size(1050,760)
 $form.StartPosition='CenterScreen'
-$form.MinimumSize=New-Object System.Drawing.Size(900,600)
+$form.MinimumSize=New-Object System.Drawing.Size(900,660)
 $form.BackColor=[System.Drawing.Color]::FromArgb(18,22,30)
 
 $header=New-Object System.Windows.Forms.Panel
@@ -62,7 +62,7 @@ $info.Location=New-Object System.Drawing.Point(25,115);$info.Size=New-Object Sys
 $form.Controls.Add($info)
 
 $actions=New-Object System.Windows.Forms.FlowLayoutPanel
-$actions.Location=New-Object System.Drawing.Point(25,205);$actions.Size=New-Object System.Drawing.Size(1000,250);$actions.AutoScroll=$true
+$actions.Location=New-Object System.Drawing.Point(25,205);$actions.Size=New-Object System.Drawing.Size(1000,330);$actions.AutoScroll=$true
 $actions.BackColor=[System.Drawing.Color]::FromArgb(24,29,39);$form.Controls.Add($actions)
 
 function Add-Button($text,$tip,$handler){
@@ -84,12 +84,18 @@ Add-Button '🛡 Security' 'Firewall and Defender status' { Run-Engine Security 
 Add-Button '🧩 Error Analyzer' 'Analyze recent Windows errors' { Run-Engine ErrorAnalyzer }
 Add-Button '📋 Generate Reports' 'TXT, JSON and HTML reports' { Run-Engine Report }
 Add-Button '🔧 Repair Center' 'Open controlled repair actions' { Run-Engine Repair }
+Add-Button '🧪 Hardware Tests' '20 hardware test tools' { Run-Engine HardwareSuite }
+Add-Button '📡 Network Pro' '20 network diagnostics tools' { Run-Engine NetworkSuite }
+Add-Button '🏥 Windows Health' '20 system health checks' { Run-Engine WindowsHealthSuite }
+Add-Button '🧹 Cleanup Suite' '15 cleanup and speed tools' { Run-Engine CleanupSuite }
+Add-Button '🔐 Security Suite' '10 security audit tools' { Run-Engine SecuritySuite }
+Add-Button '🧰 Technician Tools' '15 workflow tools' { Run-Engine WorkflowSuite }
 Add-Button '📁 Reports Folder' 'Open local reports' { $dir=Join-Path $Root 'reports';New-Item -ItemType Directory -Force -Path $dir|Out-Null;Start-Process explorer.exe $dir }
 
 $footer=New-Object System.Windows.Forms.Label
 $footer.Text='Workflow: Scan → Analyze → Explain → Recommend → Confirm → Repair → Verify → Report    |    Created by Mukamyi Izere Arcange'
 $footer.ForeColor=[System.Drawing.Color]::Silver;$footer.Font=New-Object System.Drawing.Font('Segoe UI',9)
-$footer.Location=New-Object System.Drawing.Point(25,590);$footer.AutoSize=$true;$form.Controls.Add($footer)
+$footer.Location=New-Object System.Drawing.Point(25,670);$footer.AutoSize=$true;$form.Controls.Add($footer)
 
 $form.Add_Shown({ $s=Get-SystemSnapshot; $info.Text="PC: $($s.Manufacturer) $($s.Model)`nOS: $($s.OS) (Build $($s.Build))`nCPU: $($s.CPU)`nRAM: $($s.RAMGB) GB   |   Problem devices: $($s.ProblemDevices)   |   Low-space volumes: $($s.LowSpace)   |   Admin: $($s.Admin)" })
 [void]$form.ShowDialog()
